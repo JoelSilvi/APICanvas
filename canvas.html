@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+
+    #lienzo{
+        background-color: red;
+    }
+
+section{
+    width: 500px;
+    position: relative;
+    margin: auto;
+}
+</style>
+
+<script>
+
+    function comenzar(){
+
+        var elemento=document.getElementById("lienzo");
+
+        lienzo=elemento.getContext("2d");
+
+        // sirve para fillRect
+        // lienzo.fillStyle="blue";
+
+        // construye rectángulos rellenos
+        // lienzo.fillRect(110,80,200,200);
+
+        // crea un borrador dentro de fillRect
+        // lienzo.clearRect(130,130,50,50);
+
+
+        // sirve para strokeRect
+        lienzo.strokeStyle="blue";
+
+        lienzo.fillStyle="yellow";
+
+        lienzo.globalAlpha=0.3;
+
+        // construye rectángulos vacíos
+        lienzo.strokeRect(100,100,120,120);
+
+        lienzo.fillRect(110,110,100,100);
+
+        lienzo.clearRect(120,120,80,80);
+        
+        
+    }
+
+
+
+window.addEventListener("load",comenzar,false);
+</script>
+
+</head>
+<body>
+
+    <section id="dibujo">
+
+        <canvas id="lienzo" width="500" height="300">
+
+        Su navegador no soporta canvas.
+
+        </canvas>
+    </section>
+    
+</body>
+</html>
