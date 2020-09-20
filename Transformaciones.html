@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+    #lienzo{
+        border: 1px red solid;
+    }
+
+    section{
+        width: 800px;
+        position: relative;
+        margin: auto;
+    }
+
+</style>
+
+<script>
+
+    function comenzar(){
+        var elemento=document.getElementById("lienzo");
+
+        lienzo=elemento.getContext("2d");
+
+        lienzo.font="bold 20px verdana";
+
+        lienzo.fillText("Hola alumnos",50,20);
+
+        lienzo.translate(100,100);
+
+        lienzo.scale(3,3);
+
+        lienzo.rotate(Math.PI);
+
+        lienzo.fillText("Hola alumons",-200,-150);
+    }
+
+window.addEventListener("load",comenzar,false);
+</script>
+
+
+</head>
+<body>
+
+    <section>
+
+        <canvas width="1200" height="800" id="lienzo">
+
+            Su navegador no soporta canvas
+
+        </canvas>
+
+
+    </section>
+    
+</body>
+</html>
