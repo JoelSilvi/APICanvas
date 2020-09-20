@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #lienzo{
+            border: 1px red solid;
+            background-color: green;
+        }
+
+    </style>
+
+    <script>
+
+        function comenzar(){
+            var elemento=document.getElementById("lienzo");
+
+            lienzo=elemento.getContext("2d");
+
+            lienzo.beginPath();
+
+            lienzo.moveTo(100,200);
+
+            lienzo.lineTo(200,200);
+
+            lienzo.lineTo(150,150);
+
+            lienzo.lineTo(100,200);
+
+            lienzo.closePath();
+
+            // dibuja un triángulo vacio
+            // lienzo.stroke();
+            
+            // dibuja un triángulo lleno
+            // lienzo.fill();
+
+            lienzo.clip();
+
+            lienzo.beginPath();
+
+                for(i=0;i<250;i+=10){
+                    lienzo.moveTo(0,i);
+
+                    lienzo.lineTo(500,i);
+                }
+
+                lienzo.stroke();
+
+        }
+
+        window.addEventListener("load",comenzar,false);
+    </script>
+</head>
+<body>
+    <section id="dibujo">
+        <canvas id="lienzo" width="500" height="300">
+            SU NAVEGADOR NO SOPORTA CANVAS
+        </canvas>
+    </section>
+
+</body>
+</html>
